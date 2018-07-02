@@ -1,24 +1,38 @@
 'use strict';
 
-//const square = function(x){
-//    return x * x;
-//};
+var visibility = false;
 
-//const squareArrow = (x) => {
-//    return x * x;
-//};
-
-//const squareArrow = (x) => x * x;
-
-//console.log(squareArrow(9));
-
-var getFirstName = function getFirstName(name) {
-    return name.split(' ')[0];
+var toggleVisibility = function toggleVisibility() {
+    visibility = !visibility;
+    render();
 };
 
-console.log(getFirstName('leslie alldridge'));
+var render = function render() {
+    var jsx = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Visibility Toggle'
+        ),
+        React.createElement(
+            'button',
+            { onClick: toggleVisibility },
+            visibility ? 'Hide Details' : 'Show Details'
+        ),
+        visibility && React.createElement(
+            'div',
+            null,
+            React.createElement(
+                'p',
+                null,
+                'Hey, you found me'
+            )
+        )
+    );
 
-var getName = function getName(name) {
-    return name.split(' ')[0];
+    ReactDOM.render(jsx, document.getElementById('app'));
 };
-console.log(getName('leslie alldridge'));
+
+render();
