@@ -36,5 +36,4 @@ render () {
 
 }
 
-
 ReactDOM.render(<VisibilityToggle />, document.getElementById('app'));
