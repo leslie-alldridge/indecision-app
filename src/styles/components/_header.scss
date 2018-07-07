@@ -16,6 +16,12 @@
     font-weight: 500;
 }
 
+.head__img {
+    margin-right: $m-size;
+    max-width: $l-size; 
+    max-height: $l-size;
+}
+
 @media (min-width: $desktop-breakpoint) {
     .header {
         margin-bottom: $xl-size;

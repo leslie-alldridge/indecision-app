@@ -21,7 +21,11 @@ module.exports = {
             'css-loader',
             'sass-loader'
         ]
-    }]
+    },
+     {
+        test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192',
+        loader: 'url-loader?limit=8192'
+     }]
     },
     devtool: 'cheap-module-eval-source-map',
     devServer: {
